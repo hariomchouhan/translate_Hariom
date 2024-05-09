@@ -8,7 +8,7 @@
 
 Firstly, you should install node modules by using this code:
 
->npm install / yarn install
+>npm install / yarn
 
 After that, for starting the localhost you need to run this code on terminal:
 
