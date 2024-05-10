@@ -26,7 +26,9 @@ const Convert=({options})=>{
             const {data}=await axios.post('https://translation.googleapis.com/language/translate/v2/detect',{},{
                 params: {
                     q:debouncedText,
-                    key: "AIzaSyCHUCmpR7cT_yDFHC98CZJy2LTms-IwDlM"
+                    key: "AIzaSyCHUCmpR7cT_yDFHC98CZJy2LTms-IwDlM",
+                    "content-type": "application/x-www-form-urlencoded",
+                    "Accept-Encoding": "application/gzip"
                 }
             });
             if(inLang.value!==data.data.detections[0][0].language && debouncedText!==""){
@@ -53,7 +55,9 @@ const Convert=({options})=>{
                     q:debouncedText,
                     target:outLang.value,
                     source:inLang.value,
-                    key: "AIzaSyCHUCmpR7cT_yDFHC98CZJy2LTms-IwDlM"
+                    key: "AIzaSyCHUCmpR7cT_yDFHC98CZJy2LTms-IwDlM",
+                    "content-type": "application/x-www-form-urlencoded",
+                    "Accept-Encoding": "application/gzip"
                 }
             });
             dispatch(outputText(data.data.translations[0].translatedText));
